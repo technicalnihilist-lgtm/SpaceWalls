@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  Window background shown while the activity is being created.
+  NOTE: <bitmap android:src="..."> only accepts bitmap drawables — pointing it at a
+  vector throws at inflation time and crashes the launch, so the vector is placed
+  in a layer-list item instead.
+-->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@color/amoled_black" />
-    <item android:gravity="center">
-        <bitmap android:src="@drawable/ic_splash_mark" android:gravity="center" />
-    </item>
+    <item
+        android:drawable="@drawable/ic_splash_mark"
+        android:gravity="center" />
 </layer-list>

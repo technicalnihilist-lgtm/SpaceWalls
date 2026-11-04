@@ -13,8 +13,8 @@ android {
         applicationId = "com.spacewalls.app"
         minSdk = 24
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = 2
+        versionName = "1.0.1"
         vectorDrawables { useSupportLibrary = true }
         ksp { arg("room.schemaLocation", "$projectDir/schemas") }
     }
@@ -40,6 +40,13 @@ android {
     buildFeatures {
         compose = true
         buildConfig = true
+    }
+
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+            isReturnDefaultValues = true
+        }
     }
     packaging { resources.excludes += setOf("/META-INF/{AL2.0,LGPL2.1}") }
 }
@@ -73,4 +80,19 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging)
     implementation(libs.coil.compose)
+
+    testImplementation("junit:junit:4.13.2")
+    testImplementation("org.robolectric:robolectric:4.15.1")
+    testImplementation("androidx.test:core:1.6.1")
+    testImplementation("androidx.test.ext:junit:1.2.1")
+}
+
+// Pass proxy / truststore JVM properties through to unit-test workers when the
+// build is run behind one (CI or a corporate proxy). No-op when unset.
+tasks.withType<Test>().configureEach {
+    listOf(
+        "https.proxyHost", "https.proxyPort", "http.proxyHost", "http.proxyPort",
+        "javax.net.ssl.trustStore", "javax.net.ssl.trustStorePassword",
+        "robolectric.offline", "robolectric.dependency.dir"
+    ).forEach { key -> System.getProperty(key)?.let { systemProperty(key, it) } }
 }

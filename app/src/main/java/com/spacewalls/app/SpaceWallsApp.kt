@@ -17,7 +17,8 @@ class SpaceWallsApp : Application(), ImageLoaderFactory {
     override fun onCreate() {
         super.onCreate()
         container = AppContainer(this)
-        WorkScheduler.scheduleLiveRefresh(this)
+        // Never let background scheduling take the app down on launch.
+        runCatching { WorkScheduler.scheduleLiveRefresh(this) }
     }
 
     /**
