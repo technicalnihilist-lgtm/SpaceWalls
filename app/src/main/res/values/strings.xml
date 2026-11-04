@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SpaceWalls</string>
+    <string name="app_tagline">Premium space &amp; galaxy wallpapers</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_explore">Explore</string>
+    <string name="nav_favorites">Favorites</string>
+    <string name="nav_credits">Credits</string>
+    <string name="search_hint">Search galaxies, nebulae, planets…</string>
+    <string name="action_download">Download</string>
+    <string name="action_set_home">Home screen</string>
+    <string name="action_set_lock">Lock screen</string>
+    <string name="action_set_both">Both</string>
+    <string name="action_favorite">Favorite</string>
+    <string name="action_share">Share</string>
+    <string name="credits_title">Image credits</string>
+    <string name="license_verified">Rights verified</string>
+    <string name="rights_unverified">Rights could not be verified — not available for download</string>
+</resources>
