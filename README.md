@@ -178,3 +178,17 @@ A descriptive `User-Agent` is sent on every request, as both providers' etiquett
   `WallpaperManager`, keeping full-resolution files off the heap.
 - The 6-hourly `DailyRefreshWorker` rotates through collections so the library refreshes itself
   even if the app is not opened.
+
+---
+
+## ☕ Donate / Buy me a coffee
+
+**Coming soon** — our donation options are on the way.
+
+| Platform | Status |
+| --- | --- |
+| Paytm | Coming soon |
+| PayPal | Coming soon |
+| GPay (Google Pay) | Coming soon |
+
+If you like our work, you can support us with a donation. We are bringing this very soon — **coming soon**.
